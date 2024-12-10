@@ -101,7 +101,6 @@ export class WordModel
 
     randomWord() {
         const randomIndex = this.random.randInt(0, this.size() - 1)
-        console.log(this.wordIndex)
         return [
             randomIndex,
             this.vocabulary[randomIndex]
