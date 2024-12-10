@@ -1,6 +1,7 @@
 from cefrpy import CEFRAnalyzer, CEFRLevel 
 import json
 
+
 # --- initialize CEFR analyzer 
 print("Initializing CEFR analyzer.")
 analyzer = CEFRAnalyzer() 
@@ -9,6 +10,7 @@ analyzer = CEFRAnalyzer()
 print("Getting list of all words.")
 words = list(analyzer.yield_words())
 print(f"\tDetected {len(words)} words.")
+
 
 # --- map words to cefr level 
 cefr_counts  = {}

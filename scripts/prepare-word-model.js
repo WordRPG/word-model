@@ -32,7 +32,7 @@ for(let i = 0; i < vocabulary.length; i++) {
     wordIndex[vocabulary[i]] = i 
 }
 
-// --- load cefr wrods 
+// --- load cefr words 
 console.log("Loading CEFR data.") 
 const cefrData = 
     JSON.parse(fs_.readFileSync("./data/cefr/cefr-data.json"))
@@ -40,9 +40,13 @@ const cefrData =
 // --- filtering words with cefr 
 console.log("Filtering words with CEFR level.") 
 const wordsWithCEFR = new Set() 
+const truncatedWordIndex = {}
+let i = 0
 for(let word of vocabulary) {
     if(word in cefrData.map) {
         wordsWithCEFR.add(word)
+        truncatedWordIndex[word] = i
+        i += 1
     }
 }
 console.log(`\tDetected ${wordsWithCEFR.size} words with CEFR.`)
@@ -102,7 +106,7 @@ fs_.writeFileSync(
 console.log("\tSaving word index.")
 fs_.writeFileSync(
     `./data/word-models/${NAME}/word-index.json`, 
-    JSON.stringify(wordIndex)
+    JSON.stringify(truncatedWordIndex)
 )
 
 console.log("\tSaving CEFR data.")
@@ -113,7 +117,7 @@ fs_.writeFileSync(
 
 console.log("\tSaving vectors data.")
 PointsLoader.save(
-    `./data/word-models/${NAME}/vectors.bin`,
+    `./data/word-models/${NAME}/vectors.norm.bin`,
     truncatedVectors,
     50
   

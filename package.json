@@ -18,6 +18,7 @@
   "homepage": "https://github.com/WordRPG/word-model#readme",
   "description": "Utility word-model library for WordRPG.",
   "dependencies": {
+    "axios": "^1.7.9",
     "chance": "^1.1.12",
     "readline-sync": "^1.4.10",
     "redline": "^1.0.1"
