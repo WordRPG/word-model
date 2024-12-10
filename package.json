@@ -1,0 +1,25 @@
+{
+  "name": "word-model",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WordRPG/word-model.git"
+  },
+  "author": "LJ S.A. and K.G. T",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WordRPG/word-model/issues"
+  },
+  "homepage": "https://github.com/WordRPG/word-model#readme",
+  "description": "Utility word-model library for WordRPG.",
+  "dependencies": {
+    "chance": "^1.1.12",
+    "readline-sync": "^1.4.10",
+    "redline": "^1.0.1"
+  }
+}
