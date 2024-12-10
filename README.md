@@ -1,3 +1,3 @@
-# ivfflat
-A simple (minimal) implementation of IVFFlat for Node.js (works in the browser).
+# word-model
+Utility word-model library for WordRPG.
 
