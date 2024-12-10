@@ -5,6 +5,7 @@ import { IVFFlat, BruteForceNNS } from "ivfflat"
 import { Point } from "ivfflat"
 import { Random } from "ivfflat/src/frontend/utils/random.js"
 import { centroid } from "ivfflat/src/frontend/utils/operations.js"
+import { cosineSimilarity } from "ivfflat/src/frontend/utils/operations.js"
 
 export class WordModel 
 {
@@ -156,6 +157,10 @@ export class WordModel
             finalResults.push(result)
         }
         return finalResults
+    }
+
+    similarityScore(vectorA, vectorB) {
+        return (cosineSimilarity(vectorA, vectorB) + 1) / 2
     }
 
 }
