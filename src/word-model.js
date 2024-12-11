@@ -100,12 +100,17 @@ export class WordModel
         this.random = new Random(this.randomState)
     }
 
-    randomWord() {
-        const randomIndex = this.random.randInt(0, this.size() - 1)
-        return [
-            randomIndex,
-            this.vocabulary[randomIndex]
-        ]
+    randomWord(group = "all") {
+        if(group == "all") {
+            const randomIndex = this.random.randInt(0, this.size() - 1)
+            return [
+                randomIndex,
+                this.vocabulary[randomIndex]
+            ]
+        } else {
+            const word = this.random.choice(Object.keys(this.cefrData.groups[group])) 
+            return [this.wordIndex[word], word]
+        }
     }
 
     vector(index) {
